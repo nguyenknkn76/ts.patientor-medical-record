@@ -6,6 +6,7 @@ import { Button, Divider, Container, Typography } from '@mui/material';
 import PatientListPage from "./components/PatientListPage";
 import patientService from "./services/patient.service";
 import type { Patient } from "./types/patient.type";
+import diagnoseService from "./services/diagnose.service";
 
 const baseUrl = import.meta.env.VITE_BASE_URL;
 
@@ -15,12 +16,18 @@ const App = () => {
 
   useEffect(() => {
     void axios.get<void>(`${baseUrl}/ping`)
-
     const fetchPatientList = async () => {
       const patients = await patientService.getAll();
+      // console.log(patients);
       setPatients(patients);
     };
     void fetchPatientList();
+
+    const fetchDiagnoseList = async () => {
+      const diagnoses = await diagnoseService.getAll();
+      return diagnoses;
+    }
+    console.log(fetchDiagnoseList());
   }, []);
 
   return (

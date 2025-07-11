@@ -1,7 +1,7 @@
 import axios from "axios";
 import type { Patient, PatientFormValues } from "../types/patient.type"; 
 
-const baseUrl = import.meta.env.BASE_URL;
+const baseUrl = import.meta.env.VITE_BASE_URL;
 
 const getAll = async () => {
   const res = await axios.get<Patient[]>(
