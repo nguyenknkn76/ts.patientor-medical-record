@@ -21,5 +21,6 @@ app.use(`/api/patients`, patientRouter);
 
 app.listen(PORT, ()=> {
   console.log(`server is running on port ${PORT}`);
-  console.log(`ping: http://localhost:${PORT}/api/patients`);
+  console.log(`api: http://localhost:${PORT}/api/patients`);
+  console.log(`home: http://localhost:${PORT}`);
 });

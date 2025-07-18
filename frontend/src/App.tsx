@@ -7,6 +7,10 @@ import PatientListPage from "./components/PatientListPage";
 import patientService from "./services/patient.service";
 import type { Patient } from "./types/patient.type";
 import diagnoseService from "./services/diagnose.service";
+import HomePage from "./pages/HomePage";
+import Page1 from "./pages/Page1";
+import Page2 from "./pages/Page2";
+import LoginPage from "./pages/LoginPage";
 
 const baseUrl = import.meta.env.VITE_BASE_URL;
 
@@ -18,7 +22,6 @@ const App = () => {
     void axios.get<void>(`${baseUrl}/ping`)
     const fetchPatientList = async () => {
       const patients = await patientService.getAll();
-      // console.log(patients);
       setPatients(patients);
     };
     void fetchPatientList();
@@ -40,9 +43,17 @@ const App = () => {
           <Button component={Link} to="/" variant="contained" color="primary">
             Home
           </Button>
+          <Button component={Link} to="/home" variant="contained" color="primary">
+            Home Page
+          </Button>
           <Divider hidden />
+          
           <Routes>
             <Route path="/" element={<PatientListPage patients={patients} setPatients={setPatients} />} />
+            <Route path="/home" element={<HomePage />} />
+            <Route path="/page1" element={<Page1 />} />
+            <Route path="/page2" element={<Page2 />} />
+            <Route path="/login" element={<LoginPage />} />
           </Routes>
         </Container>
       </Router>
