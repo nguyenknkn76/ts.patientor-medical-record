@@ -1,13 +1,14 @@
 import express from 'express';
 import * as dotenv from 'dotenv';
-import cors from 'cors';
+// import cors from 'cors';
 import diagnoseRouter from './routes/diagnose.route';
 import patientRouter from './routes/patient.route';
 
 const app = express();
 dotenv.config({quiet: true});
+app.use(express.static('dist'));
 app.use(express.json());
-app.use(cors());
+// app.use(cors());
 
 const PORT = process.env.PORT;
 

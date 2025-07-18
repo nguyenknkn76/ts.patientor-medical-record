@@ -1,4 +1,5 @@
-import { Gender, NewPatient } from "../types/patient.type";
+import { Gender } from "../types/patient.type";
+import type { NewPatient } from "../types/patient.type";
 
 export const toNewPatientWithNoZod = (object: unknown) : NewPatient => {
   if(!object || typeof object !== "object") throw new Error('Incorrect or missing new patient data');

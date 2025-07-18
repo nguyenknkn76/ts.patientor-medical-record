@@ -1,5 +1,6 @@
 import z from "zod";
-import { Gender, NewPatient } from "../types/patient.type";
+import { Gender } from "../types/patient.type";
+import type {  NewPatient } from "../types/patient.type";
 
 // name, dateOfBirth, ssn, gender, occupation
 export const newPatientSchema = z.object({
