@@ -1,7 +1,7 @@
 import { Dialog, DialogTitle, DialogContent, Divider, Alert } from '@mui/material';
 
 import AddPatientForm from "./AddPatientForm";
-import type { PatientFormValues } from '../../types/patient.type';
+import type { PatientFormValues } from '../../../types/patient.type';
 
 interface Props {
   modalOpen: boolean;
