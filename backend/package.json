@@ -10,7 +10,7 @@
     "start": "node build/index.js",
     "build:ui": "cd ../frontend && npm run build && npx copyfiles dist/**/* ../backend",
     "deploy:full": "npm run build:ui && cd .. && git add . && git commit -m uibuild && git push origin main",
-    "git:push": "cd .. && git add . && git commit -m uibuild && git push origin main"
+    "git:push": "cd .. && git add . && git commit -m uibuild2 && git push origin main"
   },
   "author": "",
   "license": "ISC",
